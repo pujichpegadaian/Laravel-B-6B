@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('contact');
 });
+
+Route::get('/message', function () {
+    return view('message');
+});
+
+Route::get('/contact', function(){
+    return view('contact');
+});
+
+Route::get('/message', 'ContactController@Tampil') ->name('messageshow');
+
+Route::post('/addcontact', 'ContactController@Simpan');
